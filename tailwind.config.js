@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import plugin from 'tailwindcss/plugin';
 export default {
   content: [
     "./index.html",
@@ -7,5 +8,9 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addVariant }) {
+      addVariant('hover-hover', '@media (hover: hover)');
+    })
+  ],
 }
